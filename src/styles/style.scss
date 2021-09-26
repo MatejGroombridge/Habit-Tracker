@@ -1,0 +1,208 @@
+$primary: hsl(172, 67%, 45%);
+$dark: hsl(183, 100%, 15%);
+$grey: hsl(186, 14%, 43%);
+$light-grey: hsl(184, 14%, 56%);
+$background: hsl(185, 41%, 84%);
+$light: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: $background;
+	height: 110vh;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	bottom: 0;
+	width: 100vw;
+	height: 50px;
+
+	display: none;
+}
+
+a {
+	margin: 1em;
+	text-decoration: none;
+}
+
+input {
+	width: 100%;
+	height: 5vh;
+	border: none;
+
+	font-size: 1.2em;
+	font-weight: 700;
+
+	border-radius: 5px;
+	padding: 1em;
+
+	background: $light;
+}
+
+input:focus {
+	outline: none;
+}
+
+.head {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100vw;
+	height: 35vw;
+
+	img {
+		padding: 1em;
+	}
+}
+
+.body {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+
+	width: 100vw;
+	// height: 100vh;
+
+	background: $white;
+
+	box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: 0.05),
+		0px 10px 20px rgba($color: #000000, $alpha: 0.05);
+	padding: 1.5em;
+	border-radius: 1.5em;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+
+	width: 100%;
+
+	padding: 1.5em;
+	margin: 1em;
+	border-radius: 1em;
+}
+
+.input {
+	background: $dark;
+	height: 55vw;
+
+	h1,
+	h2,
+	h3,
+	p,
+	a {
+		color: white;
+	}
+
+	input {
+		color: $dark;
+	}
+}
+
+.output {
+	padding: 0.5em;
+	height: 50vh;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+
+	width: 100%;
+	height: 40vh;
+
+	overflow: scroll;
+}
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 5vh;
+	border-radius: 5px;
+
+	color: $dark;
+	background: $primary;
+
+	font-weight: bold;
+	font-size: 22px;
+	cursor: pointer;
+
+	box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: 0.05),
+		0px 10px 20px rgba($color: #000000, $alpha: 0.05);
+}
+
+.sml-btn {
+	display: flex;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+
+	width: 40vw;
+	border-radius: 1em;
+	height: 15vw;
+
+	color: $white;
+	background: $dark;
+	border: none;
+
+	font-weight: bold;
+	font-size: 18px;
+	cursor: pointer;
+
+	box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: 0.1),
+		0px 10px 20px rgba($color: #000000, $alpha: 0.05);
+}
+
+select {
+	border: none;
+	background: $light;
+	color: $dark;
+
+	padding: 0.25em 1em;
+	margin: 0.5em 0;
+	width: 50%;
+	border-radius: 5px;
+	text-align: right;
+
+	font-size: 16px;
+	font-weight: 700;
+
+	border: 2px solid $light;
+}
+
+select:focus {
+	outline: none;
+}
+
+.habit {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 1em;
+	margin-bottom: 1em;
+	border-radius: 1em;
+	width: 100%;
+
+	background-color: $light;
+}
