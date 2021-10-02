@@ -1,14 +1,7 @@
-$primary: hsl(172, 67%, 45%);
-$dark: hsl(183, 100%, 15%);
-$grey: hsl(186, 14%, 43%);
-$light-grey: hsl(184, 14%, 56%);
-$background: hsl(185, 41%, 84%);
-$light: hsl(189, 41%, 97%);
-$white: hsl(0, 0%, 100%);
-
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+//Matej Groombridge 2021
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import './values';
 
 * {
 	margin: 0;
@@ -19,7 +12,7 @@ $white: hsl(0, 0%, 100%);
 
 body {
 	background: $background;
-	height: 110vh;
+	height: 105vh;
 }
 
 footer {
@@ -40,7 +33,7 @@ a {
 
 input {
 	width: 100%;
-	height: 5vh;
+	height: 40px;
 	border: none;
 
 	font-size: 1.2em;
@@ -48,6 +41,8 @@ input {
 
 	border-radius: 5px;
 	padding: 1em;
+
+	margin: 1em 0;
 
 	background: $light;
 }
@@ -62,7 +57,7 @@ input:focus {
 	justify-content: center;
 
 	width: 100vw;
-	height: 35vw;
+	height: 150px;
 
 	img {
 		padding: 1em;
@@ -77,7 +72,6 @@ input:focus {
 	justify-content: flex-start;
 
 	width: 100vw;
-	// height: 100vh;
 
 	background: $white;
 
@@ -119,14 +113,14 @@ input:focus {
 
 .output {
 	padding: 0.5em;
-	height: 50vh;
+
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	flex-direction: column;
 
-	width: 100%;
-	height: 40vh;
+	max-height: 33vh;
+	min-height: 10vh;
 
 	overflow: scroll;
 }
@@ -136,7 +130,7 @@ input:focus {
 	justify-content: center;
 	align-items: center;
 
-	height: 5vh;
+	height: 40px;
 	border-radius: 5px;
 
 	color: $dark;
@@ -150,6 +144,17 @@ input:focus {
 		0px 10px 20px rgba($color: #000000, $alpha: 0.05);
 }
 
+.view-all {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+
+	margin: 1em;
+	width: 100%;
+	height: 5vh;
+}
+
 .sml-btn {
 	display: flex;
 	position: absolute;
@@ -159,6 +164,7 @@ input:focus {
 	width: 40vw;
 	border-radius: 1em;
 	height: 15vw;
+	z-index: 2;
 
 	color: $white;
 	background: $dark;
@@ -170,6 +176,48 @@ input:focus {
 
 	box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: 0.1),
 		0px 10px 20px rgba($color: #000000, $alpha: 0.05);
+}
+
+.habit-btns {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+
+	margin: 1em;
+}
+
+.habit-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 21px;
+	width: 21px;
+	background: red;
+	border-radius: 5px;
+	margin: 3px;
+
+	border: none;
+
+	img {
+		width: 15px;
+		height: 15px;
+	}
+}
+
+.habit-text {
+	overflow: hidden;
+}
+
+.done {
+	background: lightgreen;
+	border: 2px solid green;
+}
+
+.delete {
+	background: lightsalmon;
+	border: 2px solid red;
 }
 
 select {
@@ -205,4 +253,48 @@ select:focus {
 	width: 100%;
 
 	background-color: $light;
+}
+
+@media only screen and (min-width: 600px) {
+	body {
+		height: 100vh;
+	}
+
+	footer {
+		display: flex;
+	}
+
+	.body {
+		width: 67%;
+		margin: auto;
+
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: stretch;
+
+		padding: 1.5em;
+	}
+
+	.view-all {
+		display: none;
+	}
+
+	.container {
+		height: 100%;
+		width: 50%;
+		margin: 1em;
+		border-radius: 1em;
+
+		border: 2px solid red;
+	}
+
+	.input {
+		width: 35%;
+	}
+
+	.output {
+		height: 50vh;
+		max-height: none;
+		min-height: 10vh;
+	}
 }

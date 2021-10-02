@@ -1,9 +1,7 @@
 <script>
-	import NewHabit from '../components/newHabit.svelte';
-	import HabitList from '../components/habitList.svelte';
+	import Body from '../components/body.svelte';
 </script>
 
 <div class="body">
-	<NewHabit />
-	<HabitList />
+	<Body />
 </div>
