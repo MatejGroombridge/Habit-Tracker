@@ -1,38 +1,31 @@
-# create-svelte
+# Responsive Calculator App
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+A website that allows you to set and track habits. Created with HTML, SASS and Svelte
 
-## Creating a project
+## Table of contents
 
-If you're seeing this, you've probably already done this step. Congrats!
+<!-- - [Screenshot](#screenshot) -->
+<!-- - [Link](#link) -->
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
+- [Built with](#built-with)
+- [Project Takeaways](#project-takeaways)
+<!--
 
-# create a new project in my-app
-npm init svelte@next my-app
-```
+### Screenshot
 
-> Note: the `@next` is temporary
+![](./images/screenshot.png) -->
 
-## Developing
+<!-- ### Link
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+URL: [Click Here](https://matejgroombridge.github.io/Calculator-App/) -->
 
-```bash
-npm run dev
+### Built with
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- HTML5
+- SCSS
+- Svelte
+- Mobile First Workflow
 
-## Building
+### Project Takeaways
 
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
-
-```bash
-npm run build
-```
-
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+- Better understanding of Svelte

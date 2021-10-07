@@ -29,6 +29,7 @@ footer {
 a {
 	margin: 1em;
 	text-decoration: none;
+	color: $dark;
 }
 
 input {
@@ -59,8 +60,8 @@ input:focus {
 	width: 100vw;
 	height: 150px;
 
-	img {
-		padding: 1em;
+	h1 {
+		color: $dark;
 	}
 }
 
@@ -87,16 +88,21 @@ input:focus {
 	justify-content: space-between;
 	position: relative;
 
-	width: 100%;
+	width: auto;
 
 	padding: 1.5em;
 	margin: 1em;
 	border-radius: 1em;
 }
 
+.stats {
+	display: none;
+}
+
 .input {
 	background: $dark;
-	height: 55vw;
+	min-height: 20vh;
+	width: fit-content;
 
 	h1,
 	h2,
@@ -130,7 +136,7 @@ input:focus {
 	justify-content: center;
 	align-items: center;
 
-	height: 40px;
+	height: 40 px;
 	border-radius: 5px;
 
 	color: $dark;
@@ -150,8 +156,8 @@ input:focus {
 	align-items: center;
 	z-index: 2;
 
-	margin: 1em;
-	width: 100%;
+	margin: 0.5em;
+	width: auto;
 	height: 5vh;
 }
 
@@ -192,17 +198,16 @@ input:focus {
 	justify-content: center;
 	align-items: center;
 
-	height: 21px;
-	width: 21px;
-	background: red;
+	height: 27px;
+	width: 27px;
 	border-radius: 5px;
 	margin: 3px;
 
 	border: none;
 
 	img {
-		width: 15px;
-		height: 15px;
+		width: 22px;
+		height: 22px;
 	}
 }
 
@@ -211,13 +216,8 @@ input:focus {
 }
 
 .done {
-	background: lightgreen;
-	border: 2px solid green;
-}
-
-.delete {
-	background: lightsalmon;
-	border: 2px solid red;
+	background: $primary;
+	border: 2px solid $dark;
 }
 
 select {
@@ -255,7 +255,61 @@ select:focus {
 	background-color: $light;
 }
 
-@media only screen and (min-width: 600px) {
+::-webkit-scrollbar {
+	width: 0; /* Remove scrollbar space */
+	background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.stats {
+	display: none;
+}
+
+.wrapper {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.streak-stats {
+	display: flex;
+	width: auto;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	background: $light;
+	padding: 0.5em;
+	border-radius: 1em;
+	margin: 0.5em;
+
+	width: 28%;
+
+	p {
+		font-size: 14px;
+		margin: 0 1em;
+		text-align: center;
+	}
+
+	.streak-num {
+		font-size: 34px;
+		font-weight: bold;
+		color: $dark;
+	}
+}
+
+.user-name {
+	color: $dark;
+}
+
+@media only screen and (min-width: 450px) {
 	body {
 		height: 100vh;
 	}
@@ -265,7 +319,8 @@ select:focus {
 	}
 
 	.body {
-		width: 67%;
+		width: 80%;
+		max-height: 60vh;
 		margin: auto;
 
 		flex-direction: row;
@@ -281,20 +336,90 @@ select:focus {
 
 	.container {
 		height: 100%;
-		width: 50%;
-		margin: 1em;
+		width: auto;
+		margin: 0.75em;
 		border-radius: 1em;
+		overflow-x: hidden;
+		margin-bottom: 0;
+	}
 
-		border: 2px solid red;
+	.wrapper {
+		width: 50%;
 	}
 
 	.input {
-		width: 35%;
+		min-height: none;
+		height: 100%;
+		max-height: none;
+		justify-content: flex-start;
+	}
+
+	.streak-stats {
+		display: none;
 	}
 
 	.output {
-		height: 50vh;
+		height: 100%;
 		max-height: none;
-		min-height: 10vh;
+		overflow: scroll;
+	}
+
+	.habit-btns {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 800px) {
+	.body {
+		width: 67%;
+	}
+}
+
+@media only screen and (min-width: 1000px) {
+	.habit-btns {
+		display: flex;
+	}
+}
+
+@media only screen and (min-height: 670px) and (min-width: 1200px) {
+	.stats {
+		display: flex;
+		padding: 0.5em;
+
+		.streak-stats {
+			display: flex;
+		}
+	}
+
+	.input {
+		height: 80%;
+		overflow: hidden;
+	}
+
+	.stats {
+		overflow: hidden;
+	}
+
+	.half-size {
+		width: 100%;
+	}
+
+	.half {
+		display: flex;
+		justify-content: stretch;
+		align-items: center;
+		margin: 1em 0;
+
+		.half-size {
+			width: 50%;
+			height: 40px;
+			margin: 0 0.5em;
+		}
+	}
+}
+
+@media only screen and (max-width: 374px) {
+	.habit-btns {
+		display: none;
 	}
 }

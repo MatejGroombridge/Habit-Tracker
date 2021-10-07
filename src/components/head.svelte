@@ -1,3 +1,3 @@
 <div class="head">
-	<img src="logo.svg" alt="logo" />
+	<h1>Habit Tracker</h1>
 </div>

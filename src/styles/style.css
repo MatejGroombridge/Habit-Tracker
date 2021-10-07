@@ -29,6 +29,7 @@ footer {
 a {
   margin: 1em;
   text-decoration: none;
+  color: #00494d;
 }
 
 input {
@@ -61,8 +62,8 @@ input:focus {
   height: 150px;
 }
 
-.head img {
-  padding: 1em;
+.head h1 {
+  color: #00494d;
 }
 
 .body {
@@ -100,15 +101,22 @@ input:focus {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
-  width: 100%;
+  width: auto;
   padding: 1.5em;
   margin: 1em;
   border-radius: 1em;
 }
 
+.stats {
+  display: none;
+}
+
 .input {
   background: #00494d;
-  height: 55vw;
+  min-height: 20vh;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .input h1,
@@ -153,7 +161,7 @@ input:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 40px;
+  height: 40 px;
   border-radius: 5px;
   color: #00494d;
   background: #26c0ab;
@@ -175,8 +183,8 @@ input:focus {
       -ms-flex-align: center;
           align-items: center;
   z-index: 2;
-  margin: 1em;
-  width: 100%;
+  margin: 0.5em;
+  width: auto;
   height: 5vh;
 }
 
@@ -232,17 +240,16 @@ input:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 21px;
-  width: 21px;
-  background: red;
+  height: 27px;
+  width: 27px;
   border-radius: 5px;
   margin: 3px;
   border: none;
 }
 
 .habit-btn img {
-  width: 15px;
-  height: 15px;
+  width: 22px;
+  height: 22px;
 }
 
 .habit-text {
@@ -250,13 +257,8 @@ input:focus {
 }
 
 .done {
-  background: lightgreen;
-  border: 2px solid green;
-}
-
-.delete {
-  background: lightsalmon;
-  border: 2px solid red;
+  background: #26c0ab;
+  border: 2px solid #00494d;
 }
 
 select {
@@ -298,7 +300,80 @@ select:focus {
   background-color: #f4fafa;
 }
 
-@media only screen and (min-width: 600px) {
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.stats {
+  display: none;
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.streak-stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f4fafa;
+  padding: 0.5em;
+  border-radius: 1em;
+  margin: 0.5em;
+  width: 28%;
+}
+
+.info p {
+  font-size: 14px;
+  margin: 0 1em;
+  text-align: center;
+}
+
+.info .streak-num {
+  font-size: 34px;
+  font-weight: bold;
+  color: #00494d;
+}
+
+.user-name {
+  color: #00494d;
+}
+
+@media only screen and (min-width: 450px) {
   body {
     height: 100vh;
   }
@@ -308,7 +383,8 @@ select:focus {
     display: flex;
   }
   .body {
-    width: 67%;
+    width: 80%;
+    max-height: 60vh;
     margin: auto;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -327,18 +403,94 @@ select:focus {
   }
   .container {
     height: 100%;
-    width: 50%;
-    margin: 1em;
+    width: auto;
+    margin: 0.75em;
     border-radius: 1em;
-    border: 2px solid red;
+    overflow-x: hidden;
+    margin-bottom: 0;
+  }
+  .wrapper {
+    width: 50%;
   }
   .input {
-    width: 35%;
+    min-height: none;
+    height: 100%;
+    max-height: none;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .streak-stats {
+    display: none;
   }
   .output {
-    height: 50vh;
+    height: 100%;
     max-height: none;
-    min-height: 10vh;
+    overflow: scroll;
+  }
+  .habit-btns {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .body {
+    width: 67%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .habit-btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media only screen and (min-height: 670px) and (min-width: 1200px) {
+  .stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0.5em;
+  }
+  .stats .streak-stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .input {
+    height: 80%;
+    overflow: hidden;
+  }
+  .stats {
+    overflow: hidden;
+  }
+  .half-size {
+    width: 100%;
+  }
+  .half {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: stretch;
+        -ms-flex-pack: stretch;
+            justify-content: stretch;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 1em 0;
+  }
+  .half .half-size {
+    width: 50%;
+    height: 40px;
+    margin: 0 0.5em;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  .habit-btns {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
