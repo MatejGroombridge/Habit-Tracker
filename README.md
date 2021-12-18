@@ -2,8 +2,6 @@
 
 A website that allows you to set and track habits. Created with HTML, SASS and Svelte
 
-matej groombridge test 1, 2, 3
-
 ## Table of contents
 
 <!-- - [Screenshot](#screenshot) -->
